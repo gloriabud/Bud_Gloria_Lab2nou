@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Bud_Gloria_Lab2nou.Data;
 using Bud_Gloria_Lab2nou.Models;
 
-namespace Bud_Gloria_Lab2nou.Pages.Books
+namespace Bud_Gloria_Lab2nou.Pages
 {
     public class EditModel : PageModel
     {
@@ -36,9 +36,8 @@ namespace Bud_Gloria_Lab2nou.Pages.Books
                 return NotFound();
             }
             Book = book;
-
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
-            ViewData["AuthorID"] = new SelectList(_context.Author, "ID", "FullName");
+           ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID", "ID");
+           ViewData["PublisherID"] = new SelectList(_context.Publisher, "ID", "ID");
             return Page();
         }
 

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Bud_Gloria_Lab2nou.Data;
 using Bud_Gloria_Lab2nou.Models;
 
-namespace Bud_Gloria_Lab2nou.Pages.Books
+namespace Bud_Gloria_Lab2nou.Pages.Authors
 {
     public class IndexModel : PageModel
     {
@@ -19,14 +19,11 @@ namespace Bud_Gloria_Lab2nou.Pages.Books
             _context = context;
         }
 
-        public IList<Book> Book { get;set; } = default!;
+        public IList<Author> Author { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Book = await _context.Book
-                 .Include(b => b.Publisher)
-                 .Include(b => b.Author)
-                 .ToListAsync();
+            Author = await _context.Author.ToListAsync();
         }
     }
 }

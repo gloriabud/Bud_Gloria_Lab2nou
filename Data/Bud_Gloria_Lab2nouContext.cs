@@ -15,5 +15,6 @@ namespace Bud_Gloria_Lab2nou.Data
         }
 
         public DbSet<Bud_Gloria_Lab2nou.Models.Book> Book { get; set; } = default!;
+        public DbSet<Bud_Gloria_Lab2nou.Models.Publisher> Publisher { get; set; } = default!;
     }
 }

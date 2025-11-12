@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Security.Policy;
 
 namespace Bud_Gloria_Lab2nou.Models
 {
@@ -16,5 +17,7 @@ namespace Bud_Gloria_Lab2nou.Models
 
         [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
+        public int? PublisherID { get; set; }
+        public Publisher? Publisher { get; set; } 
     }
 }

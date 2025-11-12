@@ -19,5 +19,6 @@ namespace Bud_Gloria_Lab2nou.Data
 
         // ACEASTĂ LINIE ESTE CEA MAI IMPORTANTĂ PENTRU A REZOLVA EROAREA
         public DbSet<Bud_Gloria_Lab2nou.Models.Author> Author { get; set; } = default!;
+        public DbSet<Bud_Gloria_Lab2nou.Models.Category> Category { get; set; } = default!;
     }
 }
